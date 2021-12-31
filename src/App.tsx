@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Button } from '@mui/material';
+import SaveIcon from '@mui/icons-material/Save';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           style={{
             fontSize: 15,
           }}
+          startIcon={<SaveIcon />}
         >
           I am a Button!
         </Button>
