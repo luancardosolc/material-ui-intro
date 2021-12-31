@@ -18,7 +18,20 @@ function App() {
           }}
           startIcon={<SaveIcon />}
         >
-          I am a Button!
+          Icon on the left
+        </Button>
+        <Button
+          variant="contained"
+          color="secondary"
+          href="#"
+          size="large"
+          style={{
+            marginTop: 20,
+            fontSize: 15,
+          }}
+          endIcon={<SaveIcon />}
+        >
+          Icon on the right
         </Button>
         <img src={logo} className="App-logo" alt="logo" />
       </header>
