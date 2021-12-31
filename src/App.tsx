@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import { Button, ButtonGroup, Checkbox, FormControlLabel } from '@mui/material';
 import SaveIcon from '@mui/icons-material/Save';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 function App() {
   const [checkbox, setCheckbox] = useState(true);
@@ -20,6 +21,8 @@ function App() {
               checked={checkbox} 
               onChange={handleCheckboxChange}
               color='error'
+              checkedIcon={<SaveIcon />}
+              icon={<DeleteIcon />}
             />
           }
         />
