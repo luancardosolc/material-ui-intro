@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Button, ButtonGroup, Checkbox, Container, FormControlLabel, TextField, Typography } from '@mui/material';
+import { Button, ButtonGroup, Checkbox, Container, FormControlLabel, Grid, Paper, TextField, Typography } from '@mui/material';
 import SaveIcon from '@mui/icons-material/Save';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { makeStyles } from '@mui/styles';
@@ -46,7 +46,9 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Container>
+      <Container
+        maxWidth="xs"
+      >
         <div className="App">
           <header className="App-header">
             <Typography
@@ -56,6 +58,41 @@ function App() {
               Welcome
             </Typography>
             <Button className={classes.root} >buttonStyled</Button>
+
+            <Grid
+              container 
+              spacing={2}
+              justifyContent="center"
+            >
+              <Grid item>
+                <Paper
+                  style={{
+                    height: 75,
+                    width: 50,
+                    margin: 10,
+                  }}
+                />
+              </Grid>
+              <Grid item>
+                <Paper
+                  style={{
+                    height: 75,
+                    width: 50,
+                    margin: 10,
+                  }}
+                />
+              </Grid>
+              <Grid item>
+                <Paper
+                  style={{
+                    height: 75,
+                    width: 50,
+                    margin: 10,
+                  }}
+                />
+              </Grid>
+            </Grid>
+
             <TextField
               variant="outlined"
               color="secondary"
