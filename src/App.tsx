@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Button, ButtonGroup, Checkbox, Container, FormControlLabel, Grid, Paper, TextField, Typography } from '@mui/material';
+import { AppBar, Box, Button, ButtonGroup, Checkbox, Container, FormControlLabel, Grid, IconButton, Paper, TextField, Toolbar, Typography } from '@mui/material';
 import SaveIcon from '@mui/icons-material/Save';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { makeStyles } from '@mui/styles';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { green, orange } from '@mui/material/colors';
 import 'fontsource-roboto';
+import MenuIcon from '@mui/icons-material/Menu';
 
 const useStyles = makeStyles({
   root: {
@@ -49,6 +50,25 @@ function App() {
       <Container
         maxWidth="xs"
       >
+        <Box sx={{ flexGrow: 1 }}>
+          <AppBar position="static">
+            <Toolbar>
+              <IconButton
+                size="large"
+                edge="start"
+                color="inherit"
+                aria-label="menu"
+                sx={{ mr: 2 }}
+              >
+                <MenuIcon/>
+              </IconButton>
+              <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                News
+              </Typography>
+              <Button color="inherit">Login</Button>
+            </Toolbar>
+          </AppBar>
+        </Box>
         <div className="App">
           <header className="App-header">
             <Typography
