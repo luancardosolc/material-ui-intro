@@ -21,6 +21,11 @@ const useStyles = makeStyles({
 });
 
 const theme = createTheme({
+  typography: {
+    h2: {
+      fontSize: 18,
+    }
+  },
   palette: {
     primary: {
       main: green[900]
@@ -45,6 +50,7 @@ function App() {
         <header className="App-header">
           <Typography
             variant="h2"
+            component="div"
           >
             Welcome
           </Typography>
