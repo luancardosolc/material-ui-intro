@@ -64,30 +64,27 @@ function App() {
               spacing={2}
               justifyContent="center"
             >
-              <Grid item>
+              <Grid item xs={12} md={3}>
                 <Paper
                   style={{
                     height: 75,
-                    width: 50,
-                    margin: 10,
+                    width: '100%',
                   }}
                 />
               </Grid>
-              <Grid item>
+              <Grid item xs={12} md={3}>
                 <Paper
                   style={{
                     height: 75,
-                    width: 50,
-                    margin: 10,
+                    width: '100%',
                   }}
                 />
               </Grid>
-              <Grid item>
+              <Grid item xs={12} md={3}>
                 <Paper
                   style={{
                     height: 75,
-                    width: 50,
-                    margin: 10,
+                    width: '100%',
                   }}
                 />
               </Grid>
