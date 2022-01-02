@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Button, ButtonGroup, Checkbox, FormControlLabel } from '@mui/material';
+import { Button, ButtonGroup, Checkbox, FormControlLabel, TextField } from '@mui/material';
 import SaveIcon from '@mui/icons-material/Save';
 import DeleteIcon from '@mui/icons-material/Delete';
 
@@ -14,6 +14,13 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <TextField
+          variant="outlined"
+          color="secondary"
+          type="email"
+          label="Email input"
+          placeholder="test@test.com"
+        ></TextField>
         <FormControlLabel
           label="Check-me darling"
           control={
