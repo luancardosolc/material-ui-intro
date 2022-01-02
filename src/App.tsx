@@ -5,6 +5,27 @@ import { Button, ButtonGroup, Checkbox, FormControlLabel, TextField } from '@mui
 import SaveIcon from '@mui/icons-material/Save';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { makeStyles } from '@mui/styles';
+import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+import { green } from '@mui/material/colors';
+
+const useStyles = makeStyles({
+  root: {
+    background: 'linear-gradient(45deg, #333, #999)',
+    border: '0 !important',
+    borderRadius: '15px !important',
+    color: 'white !important',
+    padding: '15px 30px !important',
+    marginBottom: '10px !important',
+  },
+});
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: green[900]
+    }
+  }
+});
 
 function App() {
   const [checkbox, setCheckbox] = useState(true);
@@ -12,69 +33,62 @@ function App() {
     setCheckbox(event.target.checked);
   };
   
-  const useStyles = makeStyles({
-    root: {
-      background: 'linear-gradient(45deg, #333, #999)',
-      border: 0,
-      borderRadius: 15,
-      color: 'white',
-      padding: '0 30px',
-    },
-  });
   const classes = useStyles();
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <Button className={classes.root} >buttonStyled</Button>
-        <TextField
-          variant="outlined"
-          color="secondary"
-          type="email"
-          label="Email input"
-          placeholder="test@test.com"
-        />
-        <FormControlLabel
-          label="Check-me darling"
-          control={
-            <Checkbox
-              checked={checkbox} 
-              onChange={handleCheckboxChange}
-              color='error'
-              checkedIcon={<SaveIcon />}
-              icon={<DeleteIcon />}
-            />
-          }
-        />
-        <ButtonGroup>
-          <Button
-            variant="contained"
-            color="primary"
-            href="#"
-            size="large"
-            style={{
-              fontSize: 15,
-            }}
-            startIcon={<SaveIcon />}
-          >
-            Icon on the left
-          </Button>
-          <Button
-            variant="contained"
+    <ThemeProvider theme={theme}>  
+      <div className="App">
+        <header className="App-header">
+          <Button className={classes.root} >buttonStyled</Button>
+          <TextField
+            variant="outlined"
             color="secondary"
-            href="#"
-            size="large"
-            style={{
-              fontSize: 15,
-            }}
-            endIcon={<SaveIcon />}
-          >
-            Icon on the right
-          </Button>
-        </ButtonGroup>
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
-    </div>
+            type="email"
+            label="Email input"
+            placeholder="test@test.com"
+          />
+          <FormControlLabel
+            label="Check-me darling"
+            control={
+              <Checkbox
+                checked={checkbox} 
+                onChange={handleCheckboxChange}
+                color='error'
+                checkedIcon={<SaveIcon />}
+                icon={<DeleteIcon />}
+              />
+            }
+          />
+          <ButtonGroup>
+            <Button
+              variant="contained"
+              color="primary"
+              href="#"
+              size="large"
+              style={{
+                fontSize: 15,
+              }}
+              startIcon={<SaveIcon />}
+            >
+              Icon on the left
+            </Button>
+            <Button
+              variant="contained"
+              color="secondary"
+              href="#"
+              size="large"
+              style={{
+                fontSize: 15,
+              }}
+              endIcon={<SaveIcon />}
+            >
+              Icon on the right
+            </Button>
+          </ButtonGroup>
+          <img src={logo} className="App-logo" alt="logo" />
+        </header>
+      </div>
+    </ThemeProvider>
   );
 }
 
