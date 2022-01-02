@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Button, ButtonGroup, Checkbox, FormControlLabel, TextField } from '@mui/material';
+import { Button, ButtonGroup, Checkbox, FormControlLabel, TextField, Typography } from '@mui/material';
 import SaveIcon from '@mui/icons-material/Save';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { makeStyles } from '@mui/styles';
-import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
-import { green } from '@mui/material/colors';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { green, orange } from '@mui/material/colors';
+import 'fontsource-roboto';
 
 const useStyles = makeStyles({
   root: {
@@ -23,6 +24,9 @@ const theme = createTheme({
   palette: {
     primary: {
       main: green[900]
+    },
+    secondary: {
+      main: orange[900]
     }
   }
 });
@@ -39,6 +43,11 @@ function App() {
     <ThemeProvider theme={theme}>  
       <div className="App">
         <header className="App-header">
+          <Typography
+            variant="h2"
+          >
+            Welcome
+          </Typography>
           <Button className={classes.root} >buttonStyled</Button>
           <TextField
             variant="outlined"
